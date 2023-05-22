@@ -21,7 +21,6 @@
 .info:before {
     content: 
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30px' height='30px' viewBox='0 0 24 24'%3E%3Cpath fill='%23b60639' d='m12.866 3 9.526 16.5a1 1 0 0 1-.866 1.5H2.474a1 1 0 0 1-.866-1.5L11.134 3a1 1 0 0 1 1.732 0ZM11 16v2h2v-2h-2Zm0-7v5h2V9h-2Z'%3E%3C/path%3E%3C/svg%3E");
-    
     border-radius: 50%;
     display: inline-flex  !important;
     flex-direction: column;
@@ -95,7 +94,7 @@ selector h3 {
     border-radius: 12px;
     padding: 30px;
     margin-top: 30px;
-    box-shadow: rgba(0, 0, 0, 0.14) 0px 3px 8px;
+    box-shadow: rgba(0, 0, 0, 0.10) 0px 3px 8px;
       counter-reset: passos;
 }
 
@@ -113,13 +112,13 @@ selector ol {
 
 selector ol > li {
   counter-increment: passos;
-  border-radius: 1rem;
-  background-color: #fffffe;
+  border-radius: 12px;
   padding: 2rem;
   padding-left: 90px;
   margin-bottom: 20px;
   align-items: center;
   position: relative;
+  border: 1px solid #eef2ff;
 }
 
 selector ol > li:before {
@@ -161,6 +160,7 @@ selector li > ul > li {
     font-size: 14px;
     line-height: 1.3em;
     margin-bottom: -15px;
+    background-color: transparent;
   }
 
 selector li > ul > li:before {
@@ -179,12 +179,15 @@ selector ul {
 
 selector ul > li {
   border-radius: 1rem;
-  background-color: rgb(255 255 255);
   padding: 1rem;
   padding-left: 45px;
   margin-bottom: 10px;
   align-items: center;
   position: relative;
+}
+
+selector div > ul > li {
+    border: 1px solid #eef2ff;
 }
 
 selector ul > li:before {
