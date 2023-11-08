@@ -1,0 +1,25 @@
+@media (min-width: 1024px) { .post-widget > .elementor-widget-container > * {
+    width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+}
+selector .wp-block-image, selector img {
+    width: auto !important;
+}
+selector p:first-of-type {
+    font-size: calc(1em + 8px);
+    line-height: 1.3em;
+    margin-bottom: 70px;
+    width: auto;
+    text-align: center;
+}
+}
+selector h3 {
+counter-reset: passos;
+margin-top: 48px;
+}
+
+selector h4 {
+margin-top: 48px;
+margin-bottom: 10px;
+}
