@@ -316,13 +316,10 @@ transform: none;
 }
 }
 selector p > a[href], selector li > a[href] {
-padding-bottom: 3px;
-padding-top: 3px;
+padding: 2px 9px;
 margin-left: 2px;
 margin-right: 2px;
 border-radius: var(--rounded-l);
-padding-left: 0.5rem;
-padding-right: 0.5rem;
 font-size: calc(1em - 2px) !important;
 line-height: 1.8em;
 background-color: #EFF6FF !important;
@@ -337,12 +334,15 @@ font-size: 12px;
 line-height: 20px;
 }
 
+code {
+    padding: 3px 6px;
+}
+
 code, kbd {
 font-size: calc(1rem - 3px);
 background: linear-gradient(45deg, #FF0046 0%, #0012F4 100%);
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
-padding: 4px;
 border: 1px solid #eef2ff;
 }
 
@@ -350,6 +350,7 @@ kbd {
     font-family: Inter;
     font-weight: bold;
     border-radius: var(--rounded-l);
+    padding: 2px 8px;
 }
 
 selector p:not([class]) > strong {
