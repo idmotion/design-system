@@ -3,9 +3,11 @@
     margin-left: auto;
     margin-right: auto;
 }
-selector .wp-block-image, selector img {
+                            
+selector .wp-block-image, selector img, selector .wp-block-pullquote {
     width: auto !important;
 }
+                            
 selector p:first-of-type {
     font-size: calc(1em + 8px);
     line-height: 1.3em;
@@ -13,7 +15,7 @@ selector p:first-of-type {
     width: auto;
     text-align: center;
 }
-}
+
 selector h3 {
 counter-reset: passos;
 margin-top: 48px;
@@ -22,4 +24,16 @@ margin-top: 48px;
 selector h4 {
 margin-top: 48px;
 margin-bottom: 10px;
+}
+
+selector .wp-block-pullquote > blockquote > p {
+    font-weight: bold;
+    line-height: 1.1em !important;
+    font-size: 40px;
+    letter-spacing: -0.8px;
+    margin: 0;
+}
+
+selector .wp-block-pullquote cite {
+    font-size: 1rem;
 }
