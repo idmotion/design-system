@@ -37,6 +37,37 @@
                     ?>
                 </td>
             </tr>
+			
+			<!-- Campo para categorias permitidas -->
+            <tr valign="top">
+                <th scope="row">Categorias públicas</th>
+                <td>
+                    <?php
+                        $allowed_categories = (array) get_option('odyssey_restrict_allowed_categories', []);
+                        $categories = get_categories();
+                        foreach ($categories as $category) {
+                            $checked = in_array($category->term_id, $allowed_categories) ? 'checked' : '';
+                            echo "<input type='checkbox' name='odyssey_restrict_allowed_categories[]' value='{$category->term_id}' {$checked}> {$category->name}<br>";
+                        }
+                    ?>
+                </td>
+            </tr>
+
+            <!-- Campo para tags permitidas -->
+            <tr valign="top">
+                <th scope="row">Tags públicas</th>
+                <td>
+                    <?php
+                        $allowed_tags = (array) get_option('odyssey_restrict_allowed_tags', []);
+                        $tags = get_tags();
+                        foreach ($tags as $tag) {
+                            $checked = in_array($tag->term_id, $allowed_tags) ? 'checked' : '';
+                            echo "<input type='checkbox' name='odyssey_restrict_allowed_tags[]' value='{$tag->term_id}' {$checked}> {$tag->name}<br>";
+                        }
+                    ?>
+                </td>
+            </tr>
+			
         </table>
         <input type="submit" class="button-primary" value="Salvar alterações" />
     </form>
