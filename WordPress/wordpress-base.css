@@ -108,29 +108,29 @@ margin-bottom: 40px;
 
 selector ul > li {
 padding: 0.5rem;
-padding-left: 45px;
+
 align-items: center;
 position: relative;
 overflow: hidden;
 text-overflow: ellipsis;
 }
+
 selector div > ul > li {
-border-bottom: 1px solid #00000012;
+border-bottom: 1px solid #00000015;
 }
+
 selector div > ul > li:has(li)::before {
 top: 50%;
 height: calc(100% - 32px);
 }
-selector ul > li:before {
+
+selector li > ul > li:before {
 content: '';
 background-color: #2626360f;
 border-radius: 10px;
 width: 14px;
 height: 14px;
 position: absolute;
-left: 1rem;
-top: 20px;
-transform: translateY(-50%);
 }
 
 @media (max-width: 767px) {
