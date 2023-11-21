@@ -8,3 +8,9 @@ require_once get_stylesheet_directory() . '/inc/admin-ui.php';
 require_once get_stylesheet_directory() . '/inc/custom-blocks.php';
 require_once get_stylesheet_directory() . '/inc/processos.php';
 require_once get_stylesheet_directory() . '/inc/frontend.php';
+
+function my_theme_styles() {
+  wp_enqueue_style('custom-blocks', get_stylesheet_directory_uri() . '/styles/custom-blocks-style.css');
+  wp_enqueue_style('odyssey', get_stylesheet_directory_uri() . '/styles/odyssey-styles.css');
+}
+add_action('wp_enqueue_scripts', 'my_theme_styles');

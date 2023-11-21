@@ -1,0 +1,98 @@
+/*
+Theme Name: Hello Elementor Child
+Template: hello-elementor
+*/
+
+:root {
+  --shadow: rgba(0, 0, 0, 0.10) 0px 3px 8px;
+  --rounded-m: 12px;
+  --rounded-l: 20px;
+}
+
+.wp-block-image:not(.is-style-rounded) img {
+border-radius: var(--rounded-m);
+}
+.wp-block-image {
+margin-top: 48px;
+margin-bottom: 48px;
+}
+
+.wp-element-button {
+    background-color: #f5f5f7;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 6px 16px;
+    transition: background .3s ease;
+}
+
+.wp-element-button:hover {
+    background-color: #e8e8ed;
+}
+
+.wp-block-file {
+    background-color: #f5f5f7;
+    align-items: center;
+    display: flex;
+    border-radius: var(--rounded);
+    padding: 30px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.wp-block-file > a:first-of-type {
+align-items: center;
+display: flex;
+margin-right: 5px;
+white-space: nowrap;
+overflow: hidden;
+font-size: 18px;
+font-weight: bold;
+}
+
+selector .wp-block-file > a:first-of-type:before {
+content: url('data:image/svg+xml,<svg width="30" height="30" fill="%231e2736" viewBox="0 0 24 20" xmlns="http://www.w3.org/2000/svg"><path d="m3 8 6.003-6h10.995C20.55 2 21 2.455 21 2.992v18.016a.993.993 0 0 1-.993.992H3.993A1 1 0 0 1 3 20.993V8Zm7-4v5H5v11h14V4h-9Z"></path></svg>');
+margin-right: 15px;
+cursor: pointer;
+}
+
+.wp-block-file > a:nth-of-type(2) {
+    flex-shrink: 0;
+    font-size: 14px;
+    padding: 6px 16px;
+    position: relative;
+    cursor: pointer;
+    transition: background .3s ease;
+    background-color: white;
+}
+
+.wp-block-file > a:nth-of-type(2):hover {
+    background-color: #e8e8ed;
+}
+
+selector .wp-block-file > a:nth-of-type(2):after {
+    content: url('data:image/svg+xml,<svg width="18" height="18" fill="currentColor" viewBox="0 0 24 13" xmlns="http://www.w3.org/2000/svg"><path d="m16.004 9.414-8.607 8.607-1.414-1.414L14.59 8H7.004V6h11v11h-2V9.414Z"></path></svg>');
+}
+
+.wp-block-code > code {
+padding: 20px;
+font-size: 12px;
+line-height: 20px;
+}
+
+code {
+    padding: 3px 6px;
+}
+
+code, kbd {
+font-size: calc(1rem - 3px);
+background: linear-gradient(45deg, #FF0046 0%, #0012F4 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+border: 1px solid #eef2ff;
+}
+
+kbd {
+    font-family: Inter;
+    font-weight: bold;
+    border-radius: var(--rounded-l);
+    padding: 2px 8px;
+}
