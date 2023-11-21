@@ -10,7 +10,10 @@ require_once get_stylesheet_directory() . '/inc/processos.php';
 require_once get_stylesheet_directory() . '/inc/frontend.php';
 
 function my_theme_styles() {
-  wp_enqueue_style('custom-blocks', get_stylesheet_directory_uri() . '/styles/custom-blocks-style.css');
-  wp_enqueue_style('odyssey', get_stylesheet_directory_uri() . '/styles/odyssey-styles.css');
+  $styles = glob(get_stylesheet_directory() . '/styles/*.css');
+  foreach ($styles as $style) {
+    wp_enqueue_style(basename($style), get_stylesheet_directory_uri() . '/' . basename($style));
+  }
 }
+
 add_action('wp_enqueue_scripts', 'my_theme_styles');

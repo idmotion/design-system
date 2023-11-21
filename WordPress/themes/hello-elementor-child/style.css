@@ -5,8 +5,86 @@ Template: hello-elementor
 
 :root {
   --shadow: rgba(0, 0, 0, 0.10) 0px 3px 8px;
+  --rounded: 6px;
   --rounded-m: 12px;
   --rounded-l: 20px;
+  --brand-primary: #6670FF;
+  --brand-secondary: #FF66B0;
+  --btn-primary: #0011F4;
+  --btn-secondary: #cc08d6;
+}
+
+body, html {
+overflow-x: hidden !important;
+}
+
+selector .e-con-boxed {
+     padding: 0px 20px 0px 20px;
+}
+
+.bg-blue {
+    background: #0012F4;
+    color: white;
+}
+
+.bg-brand {
+    background-image: linear-gradient(45deg, #FF0046 0%, #0012F4 100%);
+    color: white;
+}
+
+.btn-w .elementor-button:hover {
+    border-bottom-color: white;
+background-image: linear-gradient(180deg, #fff 0%, #fff 100%) !important;
+}
+
+.btn-w .elementor-button {
+        color: white !important;
+        border-bottom-color: white;
+    }
+    
+.btn-w .elementor-widget-button > div > div > a:hover {
+        background-image: none;
+background-image: none;
+  -webkit-background-clip: none;
+  -webkit-text-fill-color: transparent;
+    }
+
+.card {
+    border-radius: var(--rounded);
+    padding: 30px;
+}
+.card p {
+    font-size: 15px;
+    line-height: 1.2em;
+}
+
+.card h3,h4 {
+    font-size: var( --e-global-typography-6b68de0-font-size );
+}
+
+.card-g {
+    border-radius: var(--rounded);
+    padding: 50px;
+}
+
+@media (max-width: 786px) {
+    .card-g {
+        padding: 30px;
+    }
+}
+
+.rounded {
+    border-radius: var(--rounded);
+}
+
+.text-grad {
+    background: -webkit-linear-gradient(45deg, var(--btn-primary) 0%, var(--btn-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.blur {
+    backdrop-filter: blur(8px);
 }
 
 .wp-block-image:not(.is-style-rounded) img {
