@@ -103,7 +103,7 @@ margin-bottom: 48px;
     transition: background .3s ease;
 }
 
-.wp-element-button:hover {
+.wp-element-button:hover, .link-externo-class:hover, #submit:hover {
     background-color: #e8e8ed;
 }
 

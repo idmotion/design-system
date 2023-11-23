@@ -18,6 +18,8 @@ function odyssey_restrict_settings() {
     register_setting('odyssey_restrict_options', 'odyssey_restrict_allowed_pages');
     register_setting('odyssey_restrict_options', 'odyssey_restrict_allowed_posts'); // Nova opção para posts
     register_setting('odyssey_restrict_options', 'odyssey_restrict_allow_home');
+	register_setting('odyssey_restrict_options', 'odyssey_restrict_allowed_categories');
+    register_setting('odyssey_restrict_options', 'odyssey_restrict_allowed_tags');
 }
 
 
@@ -32,7 +34,11 @@ function odyssey_restrict_page() {
     if (isset($_POST['reset_odyssey_restrict_settings'])) {
         update_option('odyssey_restrict_allowed_pages', []);
         update_option('odyssey_restrict_allow_home', 'no');
+		update_option('odyssey_restrict_allowed_categories', []);
+    	update_option('odyssey_restrict_allowed_tags', []);
     }
+	
+
 	
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['odyssey_restrict_allowed_posts'])) {
         update_option('odyssey_restrict_allowed_posts', $_POST['odyssey_restrict_allowed_posts']);
@@ -50,29 +56,49 @@ function odyssey_restrict_page() {
 // Redirect function
 function odyssey_restrict_redirect() {
     $allowed_pages = get_option('odyssey_restrict_allowed_pages', []);
+    $allowed_posts = get_option('odyssey_restrict_allowed_posts', []);
     if (!is_array($allowed_pages)) {
         $allowed_pages = [];
     }
-    $allowed_posts = get_option('odyssey_restrict_allowed_posts', []);
     if (!is_array($allowed_posts)) {
         $allowed_posts = [];
     }
     $allow_home = get_option('odyssey_restrict_allow_home', 'no');
+	
+    $allowed_categories = get_option('odyssey_restrict_allowed_categories', []);
+    $allowed_tags = get_option('odyssey_restrict_allowed_tags', []);
 
     if (!is_user_logged_in()) {
-        global $post;
-
-        // Permite a visualização da página inicial, se configurado
+        // Verificar a página inicial
         if (is_home() && $allow_home === 'yes') {
             return;
         }
 
-        // Checa se o usuário está acessando uma página ou post permitido
-        if ((is_single() || is_page()) && (in_array($post->ID, $allowed_pages) || in_array($post->ID, $allowed_posts))) {
-            return;
+        // Verificar páginas e posts individuais
+        if (is_single() || is_page()) {
+            global $post;
+            if (in_array($post->ID, $allowed_pages) || in_array($post->ID, $allowed_posts)) {
+                return;
+            }
         }
 
-        // Se não estiver nas condições acima, redireciona para a tela de login
+        // Verificar categorias
+        if (is_category()) {
+            $queried_object_id = get_queried_object_id();
+            if (in_array($queried_object_id, $allowed_categories)) {
+                return;
+            }
+        }
+
+        // Verificar tags
+        if (is_tag()) {
+            $queried_object_id = get_queried_object_id();
+            if (in_array($queried_object_id, $allowed_tags)) {
+                return;
+            }
+        }
+
+        // Redirecionar se nenhuma das condições acima for atendida
         auth_redirect();
     }
 }

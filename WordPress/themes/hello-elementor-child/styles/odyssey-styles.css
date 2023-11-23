@@ -92,32 +92,28 @@ padding: .5em;
 
 .link-externo-class {
     display: inline-flex;
-    padding: 7px;
+    padding: 7px 14px;
+    font-size: 14px;
+    font-weight: bold;
     overflow: hidden;
-    border: 1px solid #0A43FF12;
+        background-color: #05050505;
     margin: 10px 0px;
     border-radius: var(--rounded);
     position: relative;
-    padding-left: 50px; 
-    transition: color 0.3s ease;
+    padding-left: 40px; 
+    transition: color 0.3s ease, background 0.3s ease;
 }
 
 .link-externo-class:before {
     content: url('data:image/svg+xml,<svg width="20" height="20" fill="%231e2736" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6v2H5v11h11v-5h2v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6Zm11-3v8h-2V6.413l-7.793 7.794-1.414-1.414L17.585 5H13V3h8Z"></path></svg>');
     position: absolute;
     display: flex;
-    background-color: #05050505;
     justify-content: center;
     width: 2.5em;
     height: 2.5em;
     padding: 9px;
-    left: 0px;
-    top: 50%;
-    transform: translateY(-50%);
+    left: 5px;
+    top: 48%;
+    transform: translateY(-52%);
     cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.link-externo-class:hover:before {
-    background-color: #69696905;
 }

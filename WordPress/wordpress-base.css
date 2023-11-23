@@ -11,6 +11,12 @@ selector h2 {
 margin-top: 72px;
 counter-reset: passos;
 }
+
+selector h4 {
+margin-top: 48px;
+margin-bottom: 10px;
+}
+
 selector :first-child {
 margin-top: 0;
 }
@@ -67,23 +73,36 @@ selector li > ul {
     margin-bottom: 0;
 }
 
-selector li > ul > li {
+selector ol > li > ul > li {
 padding-top: 45px;
 display: block;
 padding-left: 0rem;
 font-size: 14px;
 line-height: 1.3em;
-margin-bottom: -15px;
 background-color: transparent;
 }
 
-selector li > ul > li:before {
+selector ol > li > ul > li:before {
 top: 24px;
-left: 0px;
 transform: none;
 background-color: var(--bg-color, #eef2ff);
 transition: background-color 0.5s ease;
 cursor: pointer;
+}
+
+selector ul > li > ul > li {
+padding-top: 25px;
+display: block;
+padding-left: 25px;
+font-size: 14px;
+line-height: 1.3em;
+background-color: transparent;
+}
+
+selector ul > li > ul > li:before {
+left: 0px;
+top: 27px;
+background-color: #eef2ff;
 }
 
 selector ol > li > ul > li > ul > li {
@@ -107,30 +126,34 @@ margin-bottom: 40px;
 }
 
 selector ul > li {
-padding: 0.5rem;
-
+padding: 1rem;
+border-radius: var(--rounded);
+padding-left: 45px;
 align-items: center;
 position: relative;
 overflow: hidden;
 text-overflow: ellipsis;
+margin-bottom: 10px;
 }
-
 selector div > ul > li {
-border-bottom: 1px solid #00000015;
+border: 1px solid #0A43FF12;
 }
 
 selector div > ul > li:has(li)::before {
 top: 50%;
 height: calc(100% - 32px);
 }
-
-selector li > ul > li:before {
+selector ul > li:before {
 content: '';
-background-color: #2626360f;
+color: #6366f1;
+border: 1px solid #a3baff;
 border-radius: 10px;
 width: 14px;
 height: 14px;
 position: absolute;
+left: 1rem;
+top: 27px;
+transform: translateY(-50%);
 }
 
 @media (max-width: 767px) {

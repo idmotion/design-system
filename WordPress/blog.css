@@ -21,11 +21,6 @@ counter-reset: passos;
 margin-top: 48px;
 }
 
-selector h4 {
-margin-top: 48px;
-margin-bottom: 10px;
-}
-
 selector .wp-block-pullquote > blockquote > p {
     font-weight: bold;
     line-height: 1.1em !important;

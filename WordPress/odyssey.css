@@ -7,18 +7,6 @@ counter-reset: passos;
 margin-top: 80px;
 }
 
-selector h4 {
-margin-top: 48px;
-border-radius: var(--rounded);
-padding: 1rem;
-margin-bottom: 10px;
-align-items: center;
-position: relative;
-overflow: hidden;
-text-overflow: ellipsis;
-border: 1px solid #eef2ff;
-}
-
 selector ol > li.clicado:before {
 background-color: #F7F9FF;
 content:
