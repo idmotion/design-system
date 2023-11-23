@@ -8,10 +8,18 @@ function enqueue_parent_and_child_styles() {
     wp_enqueue_style( 'child-style', get_stylesheet_directory_uri().'/style.css', array('parent-style') );
 }
 
-require_once get_stylesheet_directory() . '/inc/admin-ui.php';
-require_once get_stylesheet_directory() . '/inc/custom-blocks.php';
-require_once get_stylesheet_directory() . '/inc/processos.php';
-require_once get_stylesheet_directory() . '/inc/frontend.php';
+function load_inc_directory() {
+    $path = get_stylesheet_directory() . '/inc/*.php';
+    $files = glob($path);
+
+    if ($files !== false) {
+        foreach ($files as $file) {
+            require_once $file;
+        }
+    }
+}
+
+add_action('wp_loaded', 'load_inc_directory');
 
 function my_additional_styles() {
     // Enfileira estilos da pasta /styles/

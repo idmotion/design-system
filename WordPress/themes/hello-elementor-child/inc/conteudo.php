@@ -1,3 +1,4 @@
+<?php
 // Função para marcar ou desmarcar post como Lido
 function toggle_read_status() {
     $post_id = $_POST['toggle_read_post_id'] ?? null;
@@ -63,3 +64,4 @@ function is_read_func() {
     return 'Você precisa estar logado para ver o status.';
 }
 add_shortcode('is_read', 'is_read_func');
+?>
