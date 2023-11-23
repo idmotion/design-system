@@ -71,11 +71,13 @@
 			<tr valign="top">
     <th scope="row">URL da página de login personalizada</th>
     <td>
-        <p class="description">A URL de login será <?php echo esc_url(home_url()); ?>/login/. Certifique-se de criar essa página.</p>
+		<?php
+		$login_page_slug = get_option('odyssey_restrict_login_page_slug', '');
+		?>
+		<input type="text" id="odyssey_restrict_login_page_slug" name="odyssey_restrict_login_page_slug" value="<?php echo esc_attr($login_page_slug); ?>" />
+        <p class="description">A URL de login será <?php echo esc_url(home_url()); ?>/login/.</p>
     </td>
-</tr>
-
-			
+</tr>	
         </table>
         <input type="submit" class="button-primary" value="Salvar alterações" />
 		<input type="submit" name="reset_odyssey_restrict_settings" class="button" value="Corrigir configurações" />
