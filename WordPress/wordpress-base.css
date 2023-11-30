@@ -3,10 +3,6 @@ selector h2 + h3, selector h2 + span + h3 {
     margin-top: 24px !important;
 }
 
-selector h3 + h4 {
-    margin-top: 0;
-}
-
 selector h2 {
 margin-top: 72px;
 counter-reset: passos;
@@ -17,9 +13,9 @@ margin-top: 48px;
 margin-bottom: 10px;
 }
 
-selector :first-child {
-margin-top: 0;
-}
+selector *:first-child:not(span), selector span:first-child + *, selector h3 + h4 {
+    margin-top: 0;
+    }
 
 selector ol {
 list-style: none;
