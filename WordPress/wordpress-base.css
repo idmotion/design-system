@@ -178,7 +178,7 @@ white-space: nowrap;
 }
 
 
-selector p:not([class]) > strong {
+selector :not(.quadro) > p:not([class]) > strong {
     background: -webkit-linear-gradient(45deg, var(--btn-primary) 0%, var(--btn-secondary) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
