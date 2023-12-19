@@ -355,6 +355,16 @@ kbd {
 p, .body-02 {
   font-size: var(--body-02);
 }
+.compact {
+  font-size: var(--body-01);
+  line-height: 1.4em;
+}
+.muted {
+  color: var(--text-on-color-disabled);
+}
+.bold {
+  font-weight: bold;
+}
 .smaller {
  font-size: var(--body-01);
 }
@@ -402,6 +412,17 @@ h6 {
   font-size: var(--heading-06);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, .subtitle {
   font-weight: bold;
+}
+
+.subtitle {
+  font-size: 24px;
+}
+
+.product-name {
+  font-size: var(--heading-06);
+  background: -webkit-linear-gradient(45deg, var(--btn-primary) 0%, var(--btn-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
