@@ -106,6 +106,7 @@ html {--brand-color: #1D4ED8;
   --support-info-inverse: #4589ff;
 }
 
+/* Fonte personalizada */
     body, td, textarea, input, select {
       font-family: 'Inter Tight';
     }
@@ -139,13 +140,16 @@ html {--brand-color: #1D4ED8;
       display: none;
     }
 
+/* Remoção de drop-shadow */
 	#adminmenu a:focus, #adminmenu a:hover, .folded #adminmenu .wp-submenu-head:hover {
 		box-shadow: none;
 	}
 
+
 .avatar, .notice {
 	border-radius: var(--rounded-md);
 }
+
 
 .nav-tab {
 	padding: 4px 16px;
@@ -162,61 +166,71 @@ input {
 	padding: 5px 15px;
 }
 
-  #adminmenu li.wp-has-current-submenu a.wp-has-current-submenu {
-    background: #222222;
-    margin: 5px;
-    padding: 3px 0;
-    color: white;
-    background-color: #2272b1;
-    border-radius: var(--rounded-infinite);
-    margin-right: 0.5rem;
-    align-items: center;
+
+/*** Barra de navegação ***/
+
+.dashicons, .dashicons-before:before {
+  font-size: 16px;
 }
 
-	#adminmenu a.menu-top {
-    background-color: transparent;
-    border-radius: var(--rounded-infinite);
-    padding-top: 0.2rem;
-    padding-bottom: 0.2rem;
-    margin-right: 0.5rem;
-    align-items: center;
-    margin-left: 0.5rem;
-	}
+#adminmenu li.wp-has-current-submenu a.wp-has-current-submenu {
+  background: #222222;
+  margin: 5px;
+  padding: 3px;
+  color: white;
+  background-color: #2272b1;
+  border-radius: var(--rounded-sm);
+  margin-right: 0.5rem;
+  align-items: center;
+}
 
-	#adminmenuwrap, #adminmenuback {
-		width: 210px;
-	}
-	#adminmenu {
-		width: 190px;
-		margin: 24px 15px 0 10px;
-	}
-	#wpcontent, #wpfooter {
-		margin-left: 240px;
-    margin-top: 16px;
-	}
-	#adminmenu > li.wp-menu-open > ul.wp-submenu {
-		background-color: transparent !important;
-	}
-	#adminmenu .wp-submenu {
-		border-radius: var(--rounded-md);
-		left: 190px;
-	}
-	#adminmenu li a:focus div.wp-menu-image:before, #adminmenu li.opensub div.wp-menu-image:before, #adminmenu li:hover div.wp-menu-image:before {
-		color: white;
-	}
-	.wp-menu-name {
-		font-size: 12px;
-	}
-	.wp-menu-name, #adminmenu .wp-submenu a:focus, #adminmenu .wp-submenu a:hover, #adminmenu a:hover, #adminmenu li.menu-top>a:focus {
-		color: white;
-	}
+#adminmenu a.menu-top {
+  background-color: transparent;
+  border-radius: var(--rounded-sm);
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  margin-right: 0.5rem;
+  align-items: center;
+  margin-left: 0.5rem;
+}
 
-	#adminmenu li.opensub>a.menu-top, #adminmenu li>a.menu-top:focus {
-	background-color: #edeeff11;
-  transition: background .3s ease;
-	}
-	#adminmenu li.menu-top:hover, #adminmenu li.opensub>a.menu-top, #adminmenu li>a.menu-top:focus {
-    color: var(--brand-color);
+#adminmenuwrap, #adminmenuback {
+  width: 210px;
+}
+#adminmenu {
+  width: 190px;
+  margin: 24px 15px 0 10px;
+}
+#wpcontent, #wpfooter {
+  margin-left: 240px;
+  margin-top: 16px;
+}
+#adminmenu > li.wp-menu-open > ul.wp-submenu {
+  background-color: transparent !important;
+}
+#adminmenu .wp-submenu {
+  border-radius: var(--rounded-md);
+  left: 190px;
+}
+#adminmenu li a:focus div.wp-menu-image:before, #adminmenu li.opensub div.wp-menu-image:before, #adminmenu li:hover div.wp-menu-image:before {
+  color: white;
+}
+.wp-menu-name {
+  font-size: 12px;
+}
+a {
+  transition: color var(--timing);
+}
+.wp-menu-name, #adminmenu .wp-submenu a:focus, #adminmenu .wp-submenu a:hover, #adminmenu a:hover, #adminmenu li.menu-top>a:focus {
+  color: white;
+}
+
+#adminmenu li.opensub>a.menu-top, #adminmenu li>a.menu-top:focus {
+background-color: #edeeff11;
+transition: background .3s ease;
+}
+#adminmenu li.menu-top:hover, #adminmenu li.opensub>a.menu-top, #adminmenu li>a.menu-top:focus {
+  color: var(--brand-color);
 }
 
 	.wp-list-table, #wpadminbar .menupop .ab-sub-wrapper, #wpadminbar .shortlink-input {
@@ -339,6 +353,16 @@ input[type=checkbox]:focus, input[type=color]:focus, input[type=date]:focus, inp
 	font-size: 36px;
     font-weight: bold;
 }
+
+/* Aparência > Temas */
+.theme-browser .theme {
+  border-radius: var(--rounded-lg);
+  overflow: hidden;
+}
+.theme-browser .theme .more-details {
+  border-radius: var(--rounded-lg);
+}
+
 
 /**
 * Código específico do Unify *
